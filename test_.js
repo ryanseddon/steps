@@ -1,4 +1,4 @@
-function bar(x) {
+function* bar(x) {
     yield [
         VM.break,
         23,
@@ -39,7 +39,7 @@ function bar(x) {
         59
     ];
 }
-function foo(x) {
+function* foo(x) {
     if (yield [
             (yield [
                 x,

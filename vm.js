@@ -1,5 +1,6 @@
 (function() {
     function isGeneratorInstance(f) {
+        console.log(f);
         return f.toString().indexOf('Generator') !== -1;
     }
 
@@ -23,16 +24,18 @@
     Stepper.prototype.step = function() {
         if(this.finished) return;
 
-        var res = undefined;
+        var res;
         var gen = this.stack[this.stackIdx].gen;
 
         try {
-            res = gen.send(this.currentValue);
+            res = gen.next(this.currentValue).value;
         }
         catch(e) {
             console.log(e.message);
             throw e;
         }
+
+        console.log(res);
 
         if(res[0] === RETURN) {
             this.popStack();
