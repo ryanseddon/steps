@@ -1,0 +1,13 @@
+{
+  "name": "steps",
+  "version": "0.0.2",
+  "dependencies": {
+    "esprima": "https://github.com/ariya/esprima.git#harmony",
+	"escodegen": "~0.0.19",
+	"source-map": "~0.1.27",
+	
+  },
+  "engines": {
+    "node": ">= 0.8"
+  }
+}
